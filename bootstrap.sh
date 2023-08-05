@@ -4,8 +4,8 @@ sudo apt update
 cd /home/ubuntu/.ssh
 # Create and set permissions for the private SSH key file
 sudo touch id_rsa
-sudo chmod 600 ~/.ssh/id_rsa
-echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
+sudo chmod 600 id_rsa
+echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > id_rsa
 #innstall apache2
 sudo apt -y install apache2 git rsync
 #create index.html
