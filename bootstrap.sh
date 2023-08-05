@@ -1,6 +1,9 @@
 #!/bin/bash
 sudo apt -y remove needrestart
 sudo apt update
+# Create the .ssh directory if it doesn't exist
+sudo mkdir -p ~/.ssh
+# Create and set permissions for the private SSH key file
 sudo touch ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa
 echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
