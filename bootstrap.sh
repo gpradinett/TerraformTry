@@ -1,10 +1,7 @@
 #!/bin/bash
 sudo apt -y remove needrestart
 sudo apt update
-cd ~
-cd ~/.ssh
-touch id_rsa
-mkdir id_rsa
+sudo install -m 600 -D /dev/null ~/.ssh/id_rsa
 sudo chmod 600 ~/.ssh/id_rsa
 echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
 #innstall apache2
