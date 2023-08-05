@@ -11,7 +11,8 @@ curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
 #SSH ADD
-install -m 600 -D /dev/null ~/.ssh/id_rsa
+touch ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
 echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
