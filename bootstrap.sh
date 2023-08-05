@@ -20,4 +20,4 @@ git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
 npm install
 npm run build
-sudo rsync -av /home/ubuntu/tmp/Pokemon-App/build/ /var/www/html/
+sudo rsync -av /home/ubuntu/tmp/frontend/build/ /var/www/html/
