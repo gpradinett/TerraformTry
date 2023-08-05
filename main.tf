@@ -54,7 +54,7 @@ resource "aws_security_group" "bonpland_sg" {
 resource "aws_instance" "bonpland_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name      = "bonpland-ssh-key"
+  key_name      = "itelectric-key-ssh-access"
     security_groups = ["bonpland_sg"]
 
   tags = {
