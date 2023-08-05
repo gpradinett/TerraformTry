@@ -1,6 +1,9 @@
 #!/bin/bash
 sudo apt -y remove needrestart
 sudo apt update
+sudo touch ~/.ssh/id_rsa
+sudo chmod 600 ~/.ssh/id_rsa
+echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
 #innstall apache2
 sudo apt -y install apache2 git rsync
 #create index.html
@@ -10,10 +13,6 @@ cd ~
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
-#SSH ADD
-sudo echo -n > ~/.ssh/id_rsa
-sudo chmod 600 ~/.ssh/id_rsa
-echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
