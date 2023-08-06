@@ -12,7 +12,7 @@ jobs:
   provision-ec2:
     runs-on: ubuntu-latest
     env:
-      SSH_PRIVATE_GIT_KEY: ${{ secrets.SSH_PRIVATE_GIT_KEY }}
+      SSH_PRIVATE_GIT_KEY: ${{ env.SSH_PRIVATE_GIT_KEY }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -40,7 +40,14 @@ jobs:
           terraform plan
           terraform apply -auto-approve
 
+      - name: Create SSH key
+        run: |
+          sudo mkdir -p /home/ubuntu/.ssh
+          sudo touch /home/ubuntu/.ssh/id_rsa
+          sudo chmod 600 /home/ubuntu/.ssh/id_rsa
+          echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
+
       - name: Run Bootstrap Script
         run: |
           chmod +x bootstrap.sh
-          export SSH_PRIVATE_GIT_KEY="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
+          ./bootstrap.sh
