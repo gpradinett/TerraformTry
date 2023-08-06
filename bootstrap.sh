@@ -15,7 +15,7 @@ sudo mkdir -p /home/ubuntu/.ssh
 sudo touch /home/ubuntu/.ssh/id_rsa
 sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 # Write SSH_PRIVATE_GIT_KEY to id_rsa file
-sudo tee -a /home/ubuntu/.ssh/id_rsa <<< "$SSH_PRIVATE_GIT_KEY"
+echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
