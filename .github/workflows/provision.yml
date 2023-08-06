@@ -37,23 +37,24 @@ jobs:
           terraform plan
           terraform apply -auto-approve
 
-      - name: Debugging Step - List Environment Variables
+      - name: Debugging Step 1- List Environment Variables
         run: echo "Start"
 
-      - name: Debugging Step - List Environment Variables
+      - name: Debugging Step 2- List Environment Variables
         run: printenv
 
-      - name: Debugging Step - Print SSH Private Key
+      - name: Debugging Step 3- Print SSH Private Key
         run: echo "$SSH_PRIVATE_GIT_KEY"
 
-      - name: Debugging Step - Print SSH Private Key
+      - name: Debugging Step 4- Print SSH Private Key
         run: echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}"    
 
-      - name: Debugging Step - List Environment Variables
+      - name: Debugging Step 5- List Environment Variables
         run: echo "End"
 
       - name: Run Bootstrap Script
         run: |
-          chmod +x bootstrap.sh
-          export SSH_PRIVATE_GIT_KEY="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
-          ./bootstrap.sh  
+         chmod +x bootstrap.sh
+         export SSH_PRIVATE_GIT_KEY="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
+         echo "$SSH_PRIVATE_GIT_KEY"  # This is to check if the value is correctly set
+         ./bootstrap.sh
