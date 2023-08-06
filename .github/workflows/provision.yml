@@ -41,7 +41,7 @@ jobs:
       - name: Create SSH key
         run: |
           sudo mkdir -p /home/ubuntu/.ssh
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          sudo install -m 600 /dev/null /home/ubuntu/.ssh/id_rsa
           sudo chmod 600 /home/ubuntu/.ssh/id_rsa
           echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
 
