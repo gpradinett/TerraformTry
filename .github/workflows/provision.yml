@@ -37,6 +37,9 @@ jobs:
           terraform plan
           terraform apply -auto-approve
 
+      - name: Debugging Step - Print SSH Private Key
+        run: echo "$SSH_PRIVATE_GIT_KEY"    
+
       - name: Run Bootstrap Script
         run: |
           chmod +x bootstrap.sh
