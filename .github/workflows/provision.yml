@@ -20,7 +20,8 @@ jobs:
           node-version: '14'
       - name: Create SSH key
         run: |
-          mkdir -p ~/.ssh
+          sudo mkdir -p /home/ubuntu/.ssh
+          sudo touch /home/ubuntu/.ssh/id_rsa
           echo "$SSH_PRIVATE_GIT_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           
