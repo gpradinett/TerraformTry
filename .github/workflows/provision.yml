@@ -20,10 +20,10 @@ jobs:
           node-version: '14'
       - name: Create SSH key
         run: |
-          sudo mkdir -p /home/ubuntu/.ssh
-          sudo touch /home/ubuntu/.ssh/id_rsa
-          echo "$SSH_PRIVATE_GIT_KEY" > /home/ubuntu/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          sudo mkdir -p /home/runner/.ssh
+          sudo touch /home/runner/.ssh/id_rsa
+          echo "$SSH_PRIVATE_GIT_KEY" > /home/runner/.ssh/id_rsa
+          chmod 600 /home/runner/.ssh/id_rsa
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
