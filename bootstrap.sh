@@ -14,8 +14,8 @@ sudo apt -y install nodejs
 cd /home/ubuntu/.ssh
 # Create and set permissions for the private SSH key file
 sudo touch id_rsa
-sudo chmod 600 id_rsa
 sudo echo "$SSH_PRIVATE_GIT_KEY" > id_rsa
+sudo chmod 600 id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
