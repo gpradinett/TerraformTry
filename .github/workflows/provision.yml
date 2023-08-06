@@ -44,4 +44,3 @@ jobs:
         run: |
           chmod +x bootstrap.sh
           export SSH_PRIVATE_GIT_KEY="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
-          ./bootstrap.sh
