@@ -11,8 +11,6 @@ on:
 jobs:
   provision-ec2:
     runs-on: ubuntu-latest
-    env:
-      SSH_PRIVATE_GIT_KEY: ${{ env.SSH_PRIVATE_GIT_KEY }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
