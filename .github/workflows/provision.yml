@@ -23,7 +23,7 @@ jobs:
           sudo mkdir -p /home/ubuntu/.ssh
           sudo touch /home/ubuntu/.ssh/id_rsa
           echo "$SSH_PRIVATE_GIT_KEY" > /home/ubuntu/.ssh/id_rsa
-          chmod 600 /home/ubuntu/.ssh/id_rsa
+          sudo chmod 600 /home/ubuntu/.ssh/id_rsa
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
