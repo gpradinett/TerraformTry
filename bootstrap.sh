@@ -11,11 +11,11 @@ curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
 # Create file .ssh
-cd /home/ubuntu/.ssh
-# Create and set permissions for the private SSH key file
-sudo touch id_rsa
-sudo echo "$SSH_PRIVATE_GIT_KEY" > id_rsa
-sudo chmod 600 id_rsa
+sudo mkdir -p /home/ubuntu/.ssh
+sudo touch /home/ubuntu/.ssh/id_rsa
+sudo chmod 600 /home/ubuntu/.ssh/id_rsa
+# Write SSH_PRIVATE_GIT_KEY to id_rsa file
+echo "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
