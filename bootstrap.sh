@@ -12,9 +12,9 @@ sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
 # sudo mkdir -p /home/ubuntu/.ssh
 sudo touch /home/ubuntu/.ssh/id_rsa
-echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
-#echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > /home/ubuntu/.ssh/id_rsa
-sudo chmod 600 /home/ubuntu/.ssh/id_rsa
+# echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
+echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > /home/ubuntu/.ssh/id_rsa
+# sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
