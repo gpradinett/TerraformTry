@@ -11,18 +11,25 @@ on:
 jobs:
   provision-ec2:
     runs-on: ubuntu-latest
+    env:
+      SSH_PRIVATE_GIT_KEY: ${{ secrets.SSH_PRIVATE_GIT_KEY }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-
+      - name: Create SSH key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "$SSH_PRIVATE_GIT_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: '${{ secrets.TF_USER_AWS_KEY }}'
           aws-secret-access-key: '${{ secrets.TF_USER_AWS_SECRET }}'
-          aws-region: us-west-2
+          aws-region: us-east-2
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
@@ -37,15 +44,3 @@ jobs:
           terraform validate
           terraform plan
           terraform apply -auto-approve
-
-      - name: Create SSH key
-        run: |
-          sudo mkdir -p /home/ubuntu/.ssh
-          sudo install -m 600 /dev/null /home/ubuntu/.ssh/id_rsa
-          sudo chmod 600 /home/ubuntu/.ssh/id_rsa
-          echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
-
-      - name: Run Bootstrap Script
-        run: |
-          chmod +x bootstrap.sh
-          ./bootstrap.sh
