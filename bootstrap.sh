@@ -4,16 +4,16 @@ sudo apt update
 #innstall apache2
 sudo apt -y install apache2 git rsync
 #create index.html
-sudo bash -c 'echo "bonpland app dev" > /var/www/html/index.html'
+sudo bash -c 'echo "texto de prueba" > /var/www/html/index.html'
 #install node
 cd ~
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
 # sudo mkdir -p /home/ubuntu/.ssh
-# sudo touch /home/ubuntu/.ssh/id_rsa
-# sudo chmod 600 /home/ubuntu/.ssh/id_rsa
-# echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
+sudo touch /home/ubuntu/.ssh/id_rsa
+sudo chmod 600 /home/ubuntu/.ssh/id_rsa
+echo -n "$SSH_PRIVATE_GIT_KEY" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
