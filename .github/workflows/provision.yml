@@ -33,6 +33,7 @@ jobs:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
         run: |
           cd ./
+          echo '${{ secrets.SSH_PRIVATE_GIT_KEY }}' | cat bootstrap.sh > temp && mv temp bootstrap.sh
           terraform init
           terraform validate
           terraform plan
