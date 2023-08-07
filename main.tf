@@ -70,7 +70,7 @@ resource "aws_instance" "bonpland_server" {
   #    sudo bash -c 'echo "bonpland app dev" > /var/www/html/index.html'
   #EOF
 
-  #user_data_replace_on_change = true
+  user_data_replace_on_change = true
 
 }
 
