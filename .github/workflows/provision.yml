@@ -38,8 +38,6 @@ jobs:
           terraform plan
           terraform apply -auto-approve
 
-      - name: Run Bootstrap Script
-        run: |
-          chmod +x bootstrap.sh
-          export SSH_PRIVATE_GIT_KEY="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
-          ./bootstrap.sh 
+      # - name: Run Bootstrap Script
+      #  run: |
+      #    export SSH_PRIVATE_GIT="${{ secrets.SSH_PRIVATE_GIT_KEY }}"
