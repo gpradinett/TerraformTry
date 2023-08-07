@@ -12,7 +12,7 @@ jobs:
   provision-ec2:
     runs-on: ubuntu-latest
     env:
-      SSH_PRIVATE_GIT_KEY: ${{ secrets.SSH_PRIVATE_GIT_KEY }}
+      SSH_PRIVATE_GIT_KEY: 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -21,8 +21,7 @@ jobs:
       - name: Create SSH key
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "$SSH_PRIVATE_GIT_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > ~/.ssh/id_rsa
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
