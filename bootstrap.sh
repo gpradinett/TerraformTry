@@ -15,10 +15,11 @@ echo "Contenido del secreto antes de copiar:"
 echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}"
 # sudo mkdir -p /home/ubuntu/.ssh
 sudo touch /home/ubuntu/.ssh/id_rsa
+sudo touch /home/ubuntu/.ssh/id_rsa1
 sudo touch /home/ubuntu/.ssh/prueba
 echo -n "holaaa" > /home/ubuntu/.ssh/prueba
-# echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
-echo -n " " > /home/ubuntu/.ssh/id_rsa
+echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
+echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > /home/ubuntu/.ssh/id_rsa1
 # sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
