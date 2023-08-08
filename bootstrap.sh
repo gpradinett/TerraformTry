@@ -19,6 +19,7 @@ sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa
 # Add GitHub's public key to known_hosts
 ssh-keyscan github.com >> /home/ubuntu/.ssh/known_hosts
+sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
