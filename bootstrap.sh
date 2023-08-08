@@ -15,7 +15,7 @@ sudo apt -y install nodejs
 #echo "holaaa" > /home/ubuntu/.ssh/prueba
 # echo -n "${{ secrets.SSH_PRIVATE_GIT_KEY }}" | sudo tee /home/ubuntu/.ssh/id_rsa >/dev/null
 #echo "${{ secrets.SSH_PRIVATE_GIT_KEY }}" > /home/ubuntu/.ssh/id_rsa
-#sudo chmod 600 /home/ubuntu/.ssh/id_rsa
+sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 #install front Bonpland
 mkdir /home/ubuntu/tmp
 cd /home/ubuntu/tmp
