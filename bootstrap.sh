@@ -25,6 +25,7 @@ sudo touch /home/ubuntu/tmp/prueba
 cd /home/ubuntu/tmp
 git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
+git checkout dev
 npm install
 npm run build
-sudo rsync -av /home/ubuntu/tmp/frontend/build/ /var/www/html/
+sudo rsync -av /home/ubuntu/tmp/frontend/dist/ /var/www/html/
