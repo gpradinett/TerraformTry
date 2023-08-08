@@ -20,6 +20,9 @@ mkdir /home/ubuntu/tmp
 sudo chown ubuntu:ubuntu /home/ubuntu/tmp
 cd /home/ubuntu/tmp
 git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
+sudo touch /home/ubuntu/tmp/prueba
+cd /home/ubuntu/tmp
+git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
 npm install
 npm run build
