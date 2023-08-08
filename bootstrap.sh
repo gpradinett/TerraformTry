@@ -23,7 +23,7 @@ sudo su ubuntu
 git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 sudo touch /home/ubuntu/tmp/prueba
 cd /home/ubuntu/tmp
-git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
+sudo git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
 git checkout dev
 npm install
