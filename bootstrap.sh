@@ -19,6 +19,7 @@ sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
 mkdir /home/ubuntu/tmp
 sudo chown ubuntu:ubuntu /home/ubuntu/tmp
 cd /home/ubuntu/tmp
+sudo su ubuntu
 git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
 git checkout dev
