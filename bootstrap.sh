@@ -17,6 +17,7 @@ ssh-keyscan github.com >> /home/ubuntu/.ssh/known_hosts
 sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
 #install front Bonpland
 mkdir /home/ubuntu/tmp
+sudo chown ubuntu:ubuntu /home/ubuntu/tmp
 cd /home/ubuntu/tmp
 git clone git@github.com:Inmobiliaria-Bonpland/frontend.git
 cd /home/ubuntu/tmp/frontend
