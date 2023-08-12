@@ -12,13 +12,13 @@ sudo bash nodesource_setup.sh
 sudo apt -y install nodejs
 # Crea archivo id_rsa
 sudo chmod 400 /home/ubuntu/.ssh/id_rsa
-#sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa
+sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa
 # Add GitHub's public key to known_hosts
 ssh-keyscan github.com >> /home/ubuntu/.ssh/known_hosts
-# sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
+sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
 #install front Bonpland
 mkdir /home/ubuntu/tmp
-# sudo chown ubuntu:ubuntu /home/ubuntu/tmp
+sudo chown ubuntu:ubuntu /home/ubuntu/tmp
 cd /home/ubuntu/tmp
 # sudo su ubuntu
 su - ubuntu -c "git clone git@github.com:Inmobiliaria-Bonpland/frontend.git"
