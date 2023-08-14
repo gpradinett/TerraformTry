@@ -20,13 +20,5 @@ sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
 mkdir /home/ubuntu/tmp
 sudo chown ubuntu:ubuntu /home/ubuntu/tmp
 cd /home/ubuntu/tmp
-# sudo su ubuntu
-# su - ubuntu -c "cd /home/ubuntu/tmp && git clone git@github.com:Inmobiliaria-Bonpland/frontend.git"
-# su - ubuntu -c "git clone git@github.com:Inmobiliaria-Bonpland/frontend.git"
-# Clona el repositorio dentro del directorio tmp
 su - ubuntu -c "cd /home/ubuntu/tmp && git clone git@github.com:Inmobiliaria-Bonpland/frontend.git && cd frontend && git checkout dev && npm install && npm run build"
-# cd /home/ubuntu/tmp/frontend
-# git checkout dev
-# npm install
-# npm run build
 sudo rsync -av /home/ubuntu/tmp/frontend/dist/ /var/www/html/
